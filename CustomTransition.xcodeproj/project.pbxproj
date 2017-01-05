@@ -14,6 +14,8 @@
 		86A8C2211E1E726900601682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A8C21F1E1E726900601682 /* LaunchScreen.storyboard */; };
 		86A8C2291E1E785F00601682 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C2281E1E785F00601682 /* CollectionViewController.swift */; };
 		86A8C22B1E1E788100601682 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22A1E1E788100601682 /* DetailViewController.swift */; };
+		86A8C22E1E1E808900601682 /* MagicMoveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */; };
+		86A8C2301E1E857E00601682 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		86A8C2221E1E726900601682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A8C2281E1E785F00601682 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		86A8C22A1E1E788100601682 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMoveTransition.swift; sourceTree = "<group>"; };
+		86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +65,23 @@
 				86A8C2161E1E726900601682 /* AppDelegate.swift */,
 				86A8C2181E1E726900601682 /* ViewController.swift */,
 				86A8C21A1E1E726900601682 /* Main.storyboard */,
-				86A8C2281E1E785F00601682 /* CollectionViewController.swift */,
-				86A8C22A1E1E788100601682 /* DetailViewController.swift */,
+				86A8C22C1E1E7AB800601682 /* MagicMove */,
 				86A8C21D1E1E726900601682 /* Assets.xcassets */,
 				86A8C21F1E1E726900601682 /* LaunchScreen.storyboard */,
 				86A8C2221E1E726900601682 /* Info.plist */,
 			);
 			path = CustomTransition;
+			sourceTree = "<group>";
+		};
+		86A8C22C1E1E7AB800601682 /* MagicMove */ = {
+			isa = PBXGroup;
+			children = (
+				86A8C2281E1E785F00601682 /* CollectionViewController.swift */,
+				86A8C22A1E1E788100601682 /* DetailViewController.swift */,
+				86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */,
+				86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */,
+			);
+			name = MagicMove;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A8C2291E1E785F00601682 /* CollectionViewController.swift in Sources */,
+				86A8C22E1E1E808900601682 /* MagicMoveTransition.swift in Sources */,
+				86A8C2301E1E857E00601682 /* CollectionViewCell.swift in Sources */,
 				86A8C2191E1E726900601682 /* ViewController.swift in Sources */,
 				86A8C2171E1E726900601682 /* AppDelegate.swift in Sources */,
 				86A8C22B1E1E788100601682 /* DetailViewController.swift in Sources */,

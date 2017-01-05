@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Custom Transition-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Magic Move"/>
                                         <connections>
-                                            <segue destination="uTZ-fG-zv4" kind="show" id="3aX-KC-fuO"/>
+                                            <segue destination="uTZ-fG-zv4" kind="show" id="VqB-5v-Pp7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNG-He-t0v">
@@ -69,17 +69,19 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fDY-h4-0d5" secondAttribute="bottom" constant="50" id="xQ7-CU-1CH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mtQ-mB-7i9"/>
+                    <navigationItem key="navigationItem" title="Custom Transition" id="mtQ-mB-7i9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Nga-AJ-q4g"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="233"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Magic Move-->
         <scene sceneID="GGS-cd-Gtw">
             <objects>
-                <collectionViewController id="uTZ-fG-zv4" customClass="CollectionViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6qa-qn-XWl">
+                <collectionViewController title="Magic Move" id="uTZ-fG-zv4" customClass="CollectionViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6qa-qn-XWl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,14 +92,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="IfW-2F-kB7">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="IfW-2F-kB7" customClass="CollectionViewCell" customModule="CustomTransition" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bVb-i9-Aej">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ulysses.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bVb-i9-Aej">
                                             <rect key="frame" x="8" y="8" width="134" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="ZSJ-Fi-av9"/>
@@ -123,6 +125,8 @@
                                 </constraints>
                                 <size key="customSize" width="150" height="150"/>
                                 <connections>
+                                    <outlet property="descLabel" destination="Sfd-xf-bzR" id="hM7-t0-Wux"/>
+                                    <outlet property="imgView" destination="bVb-i9-Aej" id="HZi-n2-49d"/>
                                     <segue destination="hQa-9f-Ln1" kind="show" id="Gsl-c8-RTM"/>
                                 </connections>
                             </collectionViewCell>
@@ -137,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="234.33283358320841"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail Magic Move-->
         <scene sceneID="OfI-p2-1ID">
             <objects>
-                <viewController id="hQa-9f-Ln1" customClass="DetailViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail Magic Move" id="hQa-9f-Ln1" customClass="DetailViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ume-Cn-CNi"/>
                         <viewControllerLayoutGuide type="bottom" id="USD-5Z-B2S"/>
@@ -149,7 +153,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-NO-zy6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ulysses.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-NO-zy6">
                                 <rect key="frame" x="36" y="114" width="303" height="503"/>
                             </imageView>
                         </subviews>
@@ -161,6 +165,9 @@
                             <constraint firstItem="USD-5Z-B2S" firstAttribute="top" secondItem="b3O-NO-zy6" secondAttribute="bottom" constant="50" id="arx-jt-YVh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgView" destination="b3O-NO-zy6" id="fNg-tu-DSv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do8-xV-gNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,4 +192,7 @@
             <point key="canvasLocation" x="-119" y="234"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ulysses.jpg" width="16" height="16"/>
+    </resources>
 </document>
