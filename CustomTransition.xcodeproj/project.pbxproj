@@ -16,6 +16,10 @@
 		86A8C22B1E1E788100601682 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22A1E1E788100601682 /* DetailViewController.swift */; };
 		86A8C22E1E1E808900601682 /* MagicMoveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */; };
 		86A8C2301E1E857E00601682 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */; };
+		86E40DA71E1FDC190023BB23 /* PresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E40DA61E1FDC190023BB23 /* PresentAnimator.swift */; };
+		86E40DA91E1FDECF0023BB23 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E40DA81E1FDECF0023BB23 /* PresentationController.swift */; };
+		86E40DAB1E1FE1A10023BB23 /* PresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E40DAA1E1FE1A10023BB23 /* PresentedVC.swift */; };
+		86E40DAD1E1FE1B10023BB23 /* PresentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E40DAC1E1FE1B10023BB23 /* PresentingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		86A8C22A1E1E788100601682 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMoveTransition.swift; sourceTree = "<group>"; };
 		86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		86E40DA61E1FDC190023BB23 /* PresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimator.swift; sourceTree = "<group>"; };
+		86E40DA81E1FDECF0023BB23 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		86E40DAA1E1FE1A10023BB23 /* PresentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedVC.swift; sourceTree = "<group>"; };
+		86E40DAC1E1FE1B10023BB23 /* PresentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 				86A8C2181E1E726900601682 /* ViewController.swift */,
 				86A8C21A1E1E726900601682 /* Main.storyboard */,
 				86A8C22C1E1E7AB800601682 /* MagicMove */,
+				86E40DA51E1FDBC90023BB23 /* PresentLikeWunderList */,
 				86A8C21D1E1E726900601682 /* Assets.xcassets */,
 				86A8C21F1E1E726900601682 /* LaunchScreen.storyboard */,
 				86A8C2221E1E726900601682 /* Info.plist */,
@@ -82,6 +91,17 @@
 				86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */,
 			);
 			name = MagicMove;
+			sourceTree = "<group>";
+		};
+		86E40DA51E1FDBC90023BB23 /* PresentLikeWunderList */ = {
+			isa = PBXGroup;
+			children = (
+				86E40DAA1E1FE1A10023BB23 /* PresentedVC.swift */,
+				86E40DAC1E1FE1B10023BB23 /* PresentingVC.swift */,
+				86E40DA61E1FDC190023BB23 /* PresentAnimator.swift */,
+				86E40DA81E1FDECF0023BB23 /* PresentationController.swift */,
+			);
+			name = PresentLikeWunderList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,11 +178,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A8C2291E1E785F00601682 /* CollectionViewController.swift in Sources */,
+				86E40DAD1E1FE1B10023BB23 /* PresentingVC.swift in Sources */,
+				86E40DAB1E1FE1A10023BB23 /* PresentedVC.swift in Sources */,
 				86A8C22E1E1E808900601682 /* MagicMoveTransition.swift in Sources */,
 				86A8C2301E1E857E00601682 /* CollectionViewCell.swift in Sources */,
 				86A8C2191E1E726900601682 /* ViewController.swift in Sources */,
 				86A8C2171E1E726900601682 /* AppDelegate.swift in Sources */,
+				86E40DA71E1FDC190023BB23 /* PresentAnimator.swift in Sources */,
 				86A8C22B1E1E788100601682 /* DetailViewController.swift in Sources */,
+				86E40DA91E1FDECF0023BB23 /* PresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
