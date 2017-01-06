@@ -42,9 +42,7 @@ extension MagicMoveTransition {
         let containerView = context.containerView
         
         // 1. 找到当前选中的cell
-        let selIdx = fromVC.collectionView?.indexPathsForSelectedItems?.first
-        // 这里存储一下当前选择的index，也可以在deselect代理方法中做
-        fromVC.selectedIndexPath = selIdx!
+        print("----\(fromVC.selectedIndexPath)")
         let cell = fromVC.collectionView?.cellForItem(at: fromVC.selectedIndexPath) as! CollectionViewCell
         
         // 2. 对当前选中的cell截屏
@@ -70,7 +68,7 @@ extension MagicMoveTransition {
         }) { (_) in
             snapshotView.isHidden = true
             toVC.imgView.isHidden = false
-            context.completeTransition(!context.transitionWasCancelled)
+            context.completeTransition(true)
         } 
     }
     

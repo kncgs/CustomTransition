@@ -127,7 +127,6 @@
                                 <connections>
                                     <outlet property="descLabel" destination="Sfd-xf-bzR" id="hM7-t0-Wux"/>
                                     <outlet property="imgView" destination="bVb-i9-Aej" id="HZi-n2-49d"/>
-                                    <segue destination="hQa-9f-Ln1" kind="show" id="Gsl-c8-RTM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -140,38 +139,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4Y-SD-t7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="234.33283358320841"/>
-        </scene>
-        <!--Detail Magic Move-->
-        <scene sceneID="OfI-p2-1ID">
-            <objects>
-                <viewController title="Detail Magic Move" id="hQa-9f-Ln1" customClass="DetailViewController" customModule="CustomTransition" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ume-Cn-CNi"/>
-                        <viewControllerLayoutGuide type="bottom" id="USD-5Z-B2S"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3t6-IW-rdB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ulysses.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-NO-zy6">
-                                <rect key="frame" x="36" y="114" width="303" height="503"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="b3O-NO-zy6" secondAttribute="trailing" constant="20" id="31R-ss-RR0"/>
-                            <constraint firstItem="b3O-NO-zy6" firstAttribute="top" secondItem="ume-Cn-CNi" secondAttribute="bottom" constant="50" id="8fD-ld-4E1"/>
-                            <constraint firstItem="b3O-NO-zy6" firstAttribute="leading" secondItem="3t6-IW-rdB" secondAttribute="leadingMargin" constant="20" id="Tsb-aS-bU0"/>
-                            <constraint firstItem="USD-5Z-B2S" firstAttribute="top" secondItem="b3O-NO-zy6" secondAttribute="bottom" constant="50" id="arx-jt-YVh"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imgView" destination="b3O-NO-zy6" id="fNg-tu-DSv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="do8-xV-gNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2264.8000000000002" y="235.23238380809596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zLC-pr-2yj">

@@ -16,7 +16,6 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +33,12 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         return cell
     }
-}
-
-extension CollectionViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if toVC.isKind(of: DetailViewController.self) {
-            return MagicMoveTransition(type: .push)
-        }
-        return nil
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        
+        let detailVC = DetailViewController()
+        navigationController?.delegate = detailVC
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

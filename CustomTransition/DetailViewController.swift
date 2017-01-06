@@ -10,13 +10,43 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var imgView: UIImageView!
+    var imgView: UIImageView!
+    
+    var percentTransition: UIPercentDrivenInteractiveTransition!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        navigationController?.delegate = self
+        view.backgroundColor = UIColor.cyan
+        imgView = UIImageView(image: UIImage(named: "Ulysses.jpg"))
+        view.addSubview(imgView)
+        imgView.center = view.center
+        
+        let pan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgePanGesture(_:)))
+        pan.edges = .left
+        view.addGestureRecognizer(pan)
+        
     }
+    
+    func screenEdgePanGesture(_ pan: UIScreenEdgePanGestureRecognizer) {
+        var percent = pan.translation(in: view).x / view.bounds.width
+        percent = min(max(0.0, percent), 1.0) // 0~1
+        
+        switch pan.state {
+        case .began:
+            percentTransition = UIPercentDrivenInteractiveTransition()
+            let _ = navigationController?.popViewController(animated: true)
+        case .changed:
+            percentTransition.update(percent)
+        case .ended:
+            percent > 0.5 ? percentTransition.finish() : percentTransition.cancel()
+            percentTransition = nil
+        default:
+            break
+        }
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,9 +57,7 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if toVC.isKind(of: CollectionViewController.self) {
-            return MagicMoveTransition(type: .pop)
-        }
-        return nil
+        
+        return MagicMoveTransition(type: operation == .push ? .push : .pop)
     }
 }
