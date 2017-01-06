@@ -13,12 +13,17 @@ enum TransitionType {
 }
 
 class MagicMoveTransition: NSObject {
+    
     fileprivate var type: TransitionType
-    fileprivate let transitionDuration: TimeInterval = 0.5
     
     init(type: TransitionType) {
         self.type = type
     }
+    
+    fileprivate let transitionDuration:         TimeInterval = 0.3
+    fileprivate let delay:                      TimeInterval = 0
+    fileprivate let damping:                    CGFloat = 0.8
+    fileprivate let velocity:                   CGFloat = 8
 }
 
 extension MagicMoveTransition: UIViewControllerAnimatedTransitioning {
@@ -36,13 +41,13 @@ extension MagicMoveTransition: UIViewControllerAnimatedTransitioning {
 }
 
 extension MagicMoveTransition {
+    
     func pushAnimator(context: UIViewControllerContextTransitioning) {
         let fromVC = context.viewController(forKey: .from) as! CollectionViewController
         let toVC = context.viewController(forKey: .to) as! DetailViewController
         let containerView = context.containerView
         
         // 1. 找到当前选中的cell
-        print("----\(fromVC.selectedIndexPath)")
         let cell = fromVC.collectionView?.cellForItem(at: fromVC.selectedIndexPath) as! CollectionViewCell
         
         // 2. 对当前选中的cell截屏
@@ -61,7 +66,11 @@ extension MagicMoveTransition {
         containerView.addSubview(snapshotView)
         
         // 5.
-        UIView.animate(withDuration: transitionDuration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveLinear, animations: {
+        /**
+         * @param usingSpringWithDamping 值越小弹簧效果越明显
+         * @param initialSpringVelocity 初始速度，值越大动画越快
+         */
+        UIView.animate(withDuration: transitionDuration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: .curveEaseInOut, animations: {
             snapshotView.frame = toVC.imgView.convert(toVC.imgView.bounds, to: containerView)
             toVC.view.alpha = 1
             
@@ -87,7 +96,7 @@ extension MagicMoveTransition {
         
         containerView.insertSubview(toVC.view, at: 0)
         
-        UIView.animate(withDuration: transitionDuration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: UIViewAnimationOptions(rawValue: 0), animations: {
+        UIView.animate(withDuration: transitionDuration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: .curveEaseIn, animations: {
             tempView.frame = cell.imgView.convert(cell.imgView.bounds, to: containerView)
             fromVC.view.alpha = 0
         }) { (_) in

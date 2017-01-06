@@ -77,9 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				86A8C2281E1E785F00601682 /* CollectionViewController.swift */,
+				86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */,
 				86A8C22A1E1E788100601682 /* DetailViewController.swift */,
 				86A8C22D1E1E808900601682 /* MagicMoveTransition.swift */,
-				86A8C22F1E1E857E00601682 /* CollectionViewCell.swift */,
 			);
 			name = MagicMove;
 			sourceTree = "<group>";

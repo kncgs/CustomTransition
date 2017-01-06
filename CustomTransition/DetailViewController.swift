@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     var imgView: UIImageView!
     
-    var percentTransition: UIPercentDrivenInteractiveTransition!
+    private var percentTransition: UIPercentDrivenInteractiveTransition!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,10 @@ class DetailViewController: UIViewController {
         let pan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgePanGesture(_:)))
         pan.edges = .left
         view.addGestureRecognizer(pan)
-        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func screenEdgePanGesture(_ pan: UIScreenEdgePanGestureRecognizer) {
@@ -45,19 +48,11 @@ class DetailViewController: UIViewController {
         }
         
     }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 
 extension DetailViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
         return MagicMoveTransition(type: operation == .push ? .push : .pop)
     }
 }
