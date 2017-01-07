@@ -11,7 +11,7 @@ import UIKit
 class PresentedVC: UIViewController {
     
     private lazy var presentingVC: PresentingVC = PresentingVC()
-    private lazy var preseatationController: PresentationController = PresentationController(presentedViewController: self.presentingVC, presenting: self)
+    private lazy var preseatationController: PresentationController = PresentationController(presentedViewController: self, presenting: self.presentingVC)
     
     
     override func viewDidLoad() {

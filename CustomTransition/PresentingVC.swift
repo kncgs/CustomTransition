@@ -16,6 +16,21 @@ class PresentingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange
+        addDismissBtn()
+    }
+    func addDismissBtn() {
+        let btn = UIButton()
+        btn.setTitle("dismiss", for: .normal)
+        btn.addTarget(self, action: #selector(dismissBtnClicked), for: .touchDown)
+        view.addSubview(btn)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        btn.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        btn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    }
+    func dismissBtnClicked() {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
